@@ -5,4 +5,5 @@ build:
 	go mod tidy
 
 test:
+	go mod tidy
 	go test -v 
