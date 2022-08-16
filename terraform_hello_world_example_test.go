@@ -1,18 +1,21 @@
 package test
 
 import (
+    "os"
     "testing"
 
     "github.com/gruntwork-io/terratest/modules/terraform"
+    "github.com/gruntwork-io/terratest/modules/logger"
     "github.com/stretchr/testify/assert"
 )
 
 func TestTerraformHelloWorldExample(t *testing.T) {
     // Construct the terraform options with default retryable errors to handle the most common
     // retryable errors in terraform testing.
+    testSubject := "../" + os.Getenv("TEST_SUBJECT")
     terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
         // Set the path to the Terraform code that will be tested.
-        TerraformDir: "test-subject",
+        TerraformDir: testSubject,
     })
 
     // Clean up resources with "terraform destroy" at the end of the test.
