@@ -5,7 +5,6 @@ import (
     "testing"
 
     "github.com/gruntwork-io/terratest/modules/terraform"
-    "github.com/gruntwork-io/terratest/modules/logger"
     "github.com/stretchr/testify/assert"
 )
 
